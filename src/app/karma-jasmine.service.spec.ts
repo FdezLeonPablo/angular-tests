@@ -132,7 +132,35 @@ describe('KarmaJasmineService', () => {
     const resultado = service.obtenerMaximo(-3, 7);
     expect(resultado).toBe(7);
   });
+
+  it('debería convertir una cadena de texto en minúsculas a mayúsculas', () => {
+    const resultado = service.convertirMayusculas('que onda mundo');
+    expect(resultado).toBe('QUE ONDA MUNDO');
+  });
   
+  it('debería mantener una cadena de texto en mayúsculas sin cambios', () => {
+    const resultado = service.convertirMayusculas('OPA AHI MUNDO');
+    expect(resultado).toBe('OPA AHI MUNDO');
+  });
+
+  it('debería convertir una cadena de texto con combinación de mayúsculas y minúsculas a mayúsculas', () => {
+    const resultado = service.convertirMayusculas('EsGuErEeE MuUnDoOo');
+    expect(resultado).toBe('ESGUEREEE MUUNDOOO');
+  });
   
+  it('debería devolver true para un número primo', () => {
+    const resultado = service.comprobarPrimo(7);
+    expect(resultado).toBe(true);
+  });
   
+  it('debería devolver false para un número compuesto', () => {
+    const resultado = service.comprobarPrimo(10);
+    expect(resultado).toBe(false);
+  });
+  
+  it('debería devolver false para el número 1', () => {
+    const resultado = service.comprobarPrimo(1);
+    expect(resultado).toBe(false)
+  });
+
 });
