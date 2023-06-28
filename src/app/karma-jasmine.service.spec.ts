@@ -72,5 +72,19 @@ describe('KarmaJasmineService', () => {
     const resultado = service.dividir(-40,4)
     expect(resultado).toBe(-10)
   })
+  
+  it('debería devolver true para un número par', () => {
+    const resultado = service.verificarNumeroPar(4);
+    expect(resultado).toBeTruthy();
+  })
 
+  it('debería devolver false para un número impar', () => {
+    const resultado = service.verificarNumeroPar(7);
+    expect (resultado).toBeFalsy();
+  })
+  
+  it('debería devolver true para cero porque cero es ¿par?', () => {
+    const resultado = service.verificarNumeroPar(0);
+    expect (resultado).toBeTruthy();
+  })
 });

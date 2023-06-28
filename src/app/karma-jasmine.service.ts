@@ -23,5 +23,9 @@ export class KarmaJasmineService {
     return a / b;
   }
 
+  verificarNumeroPar(a: number): boolean {
+    return a % 2 === 0;
+  }
+
 
 }
