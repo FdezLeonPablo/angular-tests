@@ -82,9 +82,27 @@ describe('KarmaJasmineService', () => {
     const resultado = service.verificarNumeroPar(7);
     expect (resultado).toBeFalsy();
   })
-  
+
   it('debería devolver true para cero porque cero es ¿par?', () => {
     const resultado = service.verificarNumeroPar(0);
     expect (resultado).toBeTruthy();
   })
+
+  it('debería devolver true para un palíndromo válido', () => {
+    const resultado = service.comprobarPalíndromo('reconocer');
+    expect(resultado).toBe(true);
+  });
+
+  it('debería devolver false para un palíndromo inválido', () => {
+    const resultado = service.comprobarPalíndromo('hola');
+    expect(resultado).toBe(false);
+  });
+
+  it('debería devolver true para un palíndromo con espacios y mayúsculas', () => {
+    const resultado = service.comprobarPalíndromo('Anita lava la tina');
+    expect(resultado).toBe(true);
+  });
+  
+  
+  
 });

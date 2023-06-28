@@ -27,5 +27,13 @@ export class KarmaJasmineService {
     return a % 2 === 0;
   }
 
+  comprobarPalíndromo(texto: string): boolean {
+    const textoMinusculas = texto.toLowerCase().replace(/[\W_]/g, '');;
+
+    const textoInvertido = textoMinusculas.split('').reverse().join('');
+
+    return textoMinusculas === textoInvertido;
+  }
+
 
 }
