@@ -70,5 +70,9 @@ export class KarmaJasmineService {
     
     return true;
   }
+
+  comprobarPositivo(numero: number): boolean {
+    return numero > 0;
+  }
   
 }

@@ -163,4 +163,19 @@ describe('KarmaJasmineService', () => {
     expect(resultado).toBe(false)
   });
 
+  it('debería devolver true para un número positivo', () => {
+    const resultado = service.comprobarPositivo(5);
+    expect(resultado).toBe(true);
+  });
+  
+  it('debería devolver false para un número negativo', () => {
+    const resultado = service.comprobarPositivo(-10);
+    expect(resultado).toBe(false);
+  });
+  
+  it('debería devolver false para el número 0', () => {
+    const resultado = service.comprobarPositivo(0);
+    expect(resultado).toBe(false);
+  });
+  
 });
