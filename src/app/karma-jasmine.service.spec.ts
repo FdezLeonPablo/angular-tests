@@ -118,5 +118,21 @@ describe('KarmaJasmineService', () => {
     expect(isNaN(resultado)).toBe(true);
   });
   
+  it('debería devolver el máximo entre dos números positivos', () => {
+    const resultado = service.obtenerMaximo(5, 8);
+    expect(resultado).toBe(8);
+  });
+
+  it('debería devolver el máximo entre dos números negativos', () => {
+    const resultado = service.obtenerMaximo(-10, -5);
+    expect(resultado).toBe(-5);
+  });
+
+  it('debería devolver el máximo entre un número positivo y un número negativo', () => {
+    const resultado = service.obtenerMaximo(-3, 7);
+    expect(resultado).toBe(7);
+  });
+  
+  
   
 });
