@@ -59,20 +59,20 @@ describe('KarmaJasmineService', () => {
   })
 
   it('debería dividir dos números positivos', () => {
-    const resultado = service.dividir(4,4)
+    const resultado = service.dividir(4, 4)
     expect(resultado).toBe(1)
   })
 
   it('debería dividir dos números negativos', () => {
-    const resultado = service.dividir(-4,-8)
+    const resultado = service.dividir(-4, -8)
     expect(resultado).toBe(0.5)
   })
 
   it('debería dividir un número positivo a un número negativo', () => {
-    const resultado = service.dividir(-40,4)
+    const resultado = service.dividir(-40, 4)
     expect(resultado).toBe(-10)
   })
-  
+
   it('debería devolver true para un número par', () => {
     const resultado = service.verificarNumeroPar(4);
     expect(resultado).toBeTruthy();
@@ -80,12 +80,12 @@ describe('KarmaJasmineService', () => {
 
   it('debería devolver false para un número impar', () => {
     const resultado = service.verificarNumeroPar(7);
-    expect (resultado).toBeFalsy();
+    expect(resultado).toBeFalsy();
   })
 
   it('debería devolver true para cero porque cero es ¿par?', () => {
     const resultado = service.verificarNumeroPar(0);
-    expect (resultado).toBeTruthy();
+    expect(resultado).toBeTruthy();
   })
 
   it('debería devolver true para un palíndromo válido', () => {
@@ -102,22 +102,22 @@ describe('KarmaJasmineService', () => {
     const resultado = service.comprobarPalíndromo('Anita lava la tina');
     expect(resultado).toBe(true);
   });
-  
+
   it('debería devolver 1 para el factorial de 0', () => {
     const resultado = service.factorial(0);
     expect(resultado).toBe(1);
   });
-  
+
   it('debería devolver el factorial correcto para un número positivo', () => {
     const resultado = service.factorial(5);
     expect(resultado).toBe(120);
   });
-  
+
   it('debería devolver NaN para un número negativo', () => {
     const resultado = service.factorial(-3);
     expect(isNaN(resultado)).toBe(true);
   });
-  
+
   it('debería devolver el máximo entre dos números positivos', () => {
     const resultado = service.obtenerMaximo(5, 8);
     expect(resultado).toBe(8);
@@ -137,7 +137,7 @@ describe('KarmaJasmineService', () => {
     const resultado = service.convertirMayusculas('que onda mundo');
     expect(resultado).toBe('QUE ONDA MUNDO');
   });
-  
+
   it('debería mantener una cadena de texto en mayúsculas sin cambios', () => {
     const resultado = service.convertirMayusculas('OPA AHI MUNDO');
     expect(resultado).toBe('OPA AHI MUNDO');
@@ -147,17 +147,17 @@ describe('KarmaJasmineService', () => {
     const resultado = service.convertirMayusculas('EsGuErEeE MuUnDoOo');
     expect(resultado).toBe('ESGUEREEE MUUNDOOO');
   });
-  
+
   it('debería devolver true para un número primo', () => {
     const resultado = service.comprobarPrimo(7);
     expect(resultado).toBe(true);
   });
-  
+
   it('debería devolver false para un número compuesto', () => {
     const resultado = service.comprobarPrimo(10);
     expect(resultado).toBe(false);
   });
-  
+
   it('debería devolver false para el número 1', () => {
     const resultado = service.comprobarPrimo(1);
     expect(resultado).toBe(false)
@@ -167,15 +167,34 @@ describe('KarmaJasmineService', () => {
     const resultado = service.comprobarPositivo(5);
     expect(resultado).toBe(true);
   });
-  
+
   it('debería devolver false para un número negativo', () => {
     const resultado = service.comprobarPositivo(-10);
     expect(resultado).toBe(false);
   });
-  
+
   it('debería devolver false para el número 0', () => {
     const resultado = service.comprobarPositivo(0);
     expect(resultado).toBe(false);
   });
+
+  it('debería devolver el número correcto de elementos en un array con elementos', () => {
+    const array = [1, 2, 3, 4, 5];
+    const resultado = service.contadorElementos(array);
+    expect(resultado).toBe(5);
+  });
+
+  it('debería devolver 0 para un array vacío', () => {
+    const array: any[] = [];
+    const resultado = service.contadorElementos(array);
+    expect(resultado).toBe(0);
+  });
+
+  it('debería devolver el número correcto de elementos en un array con elementos de diferentes tipos', () => {
+    const array = [{ nombre: 'Pablo' }, 2, false, 'Cuatro'];
+    const resultado = service.contadorElementos(array);
+    expect(resultado).toBe(4);
+  service.contadorElementos
+  });
   
-});
+})

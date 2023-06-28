@@ -74,5 +74,9 @@ export class KarmaJasmineService {
   comprobarPositivo(numero: number): boolean {
     return numero > 0;
   }
+
+  contadorElementos(array: any[]): number {
+    return array.length;
+  }
   
 }
