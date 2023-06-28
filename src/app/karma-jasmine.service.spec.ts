@@ -103,6 +103,20 @@ describe('KarmaJasmineService', () => {
     expect(resultado).toBe(true);
   });
   
+  it('debería devolver 1 para el factorial de 0', () => {
+    const resultado = service.factorial(0);
+    expect(resultado).toBe(1);
+  });
+  
+  it('debería devolver el factorial correcto para un número positivo', () => {
+    const resultado = service.factorial(5);
+    expect(resultado).toBe(120);
+  });
+  
+  it('debería devolver NaN para un número negativo', () => {
+    const resultado = service.factorial(-3);
+    expect(isNaN(resultado)).toBe(true);
+  });
   
   
 });

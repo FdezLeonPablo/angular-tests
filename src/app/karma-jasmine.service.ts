@@ -35,5 +35,20 @@ export class KarmaJasmineService {
     return textoMinusculas === textoInvertido;
   }
 
+  factorial(numero: number): number {
+    if (numero === 0 || numero === 1) {
+      return 1;
+    } else if (numero > 1) {
+      let resultado = 1;
+      for (let i = 2; i <= numero; i++) {
+        resultado *= i;
+      }
+      return resultado;
+    } else {
+      return NaN;
+    }
+  }
+  
+
 
 }
