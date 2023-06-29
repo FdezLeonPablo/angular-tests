@@ -196,5 +196,26 @@ describe('KarmaJasmineService', () => {
     expect(resultado).toBe(4);
   service.contadorElementos
   });
+
+  it('debería devolver true cuando la cadena contiene el substring', () => {
+    const cadena = 'Que onda mundo!';
+    const subcadena = 'mundo';
+    const resultado = service.contieneSubstring(cadena, subcadena);
+    expect(resultado).toBe(true);
+  });
+  
+  it('debería devolver false cuando la cadena no contiene el substring', () => {
+    const cadena = 'Que onda mundo';
+    const subcadena = 'Adiós mundo';
+    const resultado = service.contieneSubstring(cadena, subcadena);
+    expect(resultado).toBe(false);
+  });
+  
+  it('debería devolver false cuando la cadena está vacía y el substring no', () => {
+    const cadena = '';
+    const subcadena = 'Esguere';
+    const resultado = service.contieneSubstring(cadena, subcadena);
+    expect(resultado).toBe(false);
+  });
   
 })

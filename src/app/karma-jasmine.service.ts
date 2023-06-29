@@ -78,5 +78,8 @@ export class KarmaJasmineService {
   contadorElementos(array: any[]): number {
     return array.length;
   }
-  
+
+  contieneSubstring(cadena: string, subcadena: string): boolean {
+    return cadena.includes(subcadena);
+  }
 }
